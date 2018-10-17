@@ -1,8 +1,8 @@
-var promiseMd5 = require('../promise-md5');
+var promiseMd5 = require('../lib/promise-md5');
 var expect = require('chai').expect;
 
 describe('#promiseMd5()', function() {
-  context('with string argument', function() {
+  describe('with string argument', function() {
     it('should compute MD5 hash', async function() {
       var hash = await promiseMd5('Glad Chinda');
 
@@ -13,7 +13,7 @@ describe('#promiseMd5()', function() {
     });
   });
 
-  context('with non-string argument', function() {
+  describe('with non-string argument', function() {
     it('should throw an error', async function() {
       await promiseMd5(12345).catch(function(err) {
         expect(function() {

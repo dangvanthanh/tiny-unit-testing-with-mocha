@@ -1,8 +1,8 @@
-var md5 = require('../md5');
+var md5 = require('../lib/md5');
 var expect = require('chai').expect;
 
 describe('#md5()', function() {
-  context('with string argument', function() {
+  describe('with string argument', function() {
     it('should compute MD5 hash', function(done) {
       md5('Glad Chinda', function(err, hash) {
         if (err) return done(err);
@@ -16,7 +16,7 @@ describe('#md5()', function() {
     });
   });
 
-  context('with non-string argument', function() {
+  describe('with non-string argument', function() {
     it('should throw an error', function(done) {
       md5(12345, function(err, hash) {
         if (err) {
